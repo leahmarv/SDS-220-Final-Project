@@ -3,3 +3,6 @@ title: "Statistical Analysis Plan"
 format: html
 editor: visual
 ---
+
+# Introduction
+Our study investigates whether there is a statistically significant difference between the complexity of LEGO toy sets primarily marketed towards boys in comparison to those primarily marketed to girls by examining sets belonging to the "Friends" and "City" themes. Toy sets such as those produced by LEGO have become increasingly common as companies partner with popular children's media producers to create and market associated building sets. Over the pandemic, LEGO saw a 27% revenue increase at the end of 2021 in comparison to 2020 as consumers, restricted to their homes, looked for other forms of entertainment.^[https://www.lego.com/en-gb/aboutus/news/2022/march/2021-annual-results] While LEGO toy sets encompass a variety of themes not explicitly marketed towards specific genders, we recognized that sets of some themes, including those of "City" and "Friends", seemed to  lean into socialized-gender-biases that we assumed to be held by a majority of consumers. Recognizing the influence toys can have on reinforcing social norms, we decided that it was worthwhile to examine whether there was a relation between the complexity of toy sets we assume to be marketed towards boys vs those assumed to be marketed towards girls.
