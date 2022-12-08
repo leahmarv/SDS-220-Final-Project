@@ -1,0 +1,17 @@
+---
+title: "<Write something interesting here, don't just call it 'Final Project'!!>"
+author: "<Write your names!>"
+date: "December 20, 2022"
+editor: source
+bibliography: refs.bib
+number-sections: true
+format: 
+  html:
+    code-fold: true
+    embed-resources: true
+execute: 
+  echo: true
+knitr:
+  opts_chunk: 
+    message: false
+---
