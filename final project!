@@ -1,0 +1,37 @@
+library(knitr)
+library(readr)
+library(dplyr)
+options(readr.show_col_types = FALSE)
+#(lego$size)
+lego <- read_csv("https://openintro.org/data/csv/lego_population.csv")
+lego_table <- tibble(
+  Variable = c("pieces", "pages", "theme: Star Wars", "theme: Friends", "theme: City", "theme: NINJAGO", "theme: DUPLO", "size: small", "size: large"),
+  n = c(1304, 1304, 119, 103, 101, 78, 53, 981, 53),
+  Mean = c(round(mean(lego$pieces, na.rm=TRUE), digits = 2), round(mean(lego$pages, na.rm=TRUE), digits = 2), "N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"),
+  Standard_Deviation = c(round(sd(lego$pieces,na.rm=TRUE), digits = 2), round(sd(lego$pages,na.rm=TRUE), digits = 2), "N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"),
+  Percentage = c("N/A", "N/A", round((119/454)*100, digits = 2), round(((103/454)*100), digits = 2), round((101/454)*100, digits = 2), round((78/454)*100, digits = 2), round((53/454)*100, digits = 2), round((981/1034)*100, digits = 2), round((53/1034)*100, digits = 2))
+)
+kable(lego_table)
+
+library(openintro)
+library(tidyverse)
+lego_population <- read_csv("https://openintro.org/data/csv/lego_population.csv")
+
+lego_themes <- lego_population |>
+  group_by(theme) |>
+  filter(theme == "City"|theme == "Friends")
+
+theme_plot <- ggplot(lego_themes, aes(x = ages, y = pieces, color = theme)) +
+  geom_point() 
+theme_plot
+
+theme_plot <- theme_plot +
+  labs(x = "targeted age range", y = "total number of pieces in set", title = "Number of Pieces in LEGO sets", subtitle = "City and Friends themed sets from 2018 - 2020", caption = "Source: OpenIntro")
+theme_plot
+
+theme_plot <- theme_plot +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+theme_plot
+
+mutate(age_range, age_group = ifelse(ages == "Ages_4-7" | ages == "Ages_4+" | ages == "Ages_5-12" | ages == "Ages_5+", "little kids",
+                                     ifelse(ages == "Ages_6-10" | ages == "Ages_6+" | ages == "Ages_6-12" | ages == "Ages_7+" | ages == "Ages_8+" | ages == "Ages_7-12", "big kids")))
