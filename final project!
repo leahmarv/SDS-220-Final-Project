@@ -32,6 +32,3 @@ theme_plot
 theme_plot <- theme_plot +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 theme_plot
-
-mutate(age_range, age_group = ifelse(ages == "Ages_4-7" | ages == "Ages_4+" | ages == "Ages_5-12" | ages == "Ages_5+", "little kids",
-                                     ifelse(ages == "Ages_6-10" | ages == "Ages_6+" | ages == "Ages_6-12" | ages == "Ages_7+" | ages == "Ages_8+" | ages == "Ages_7-12", "big kids")))
